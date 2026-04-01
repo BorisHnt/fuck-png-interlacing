@@ -286,7 +286,7 @@ async function buildZip() {
     "lisez-moi-bordel.txt",
     [
       "Ces PNG ont ete reexportes sans entrelassement.",
-      "Adam7 reste une idee douteuse qu'on laisse derriere soi.",
+      "Adam7 est la methode d'entrelassement PNG en 7 passes, cette ordure inutile qu'on a retiree des fichiers. Il reste une idee douteuse qu'on laisse derriere soi pour le bien de tous.",
       `Fichiers convertis: ${state.items.filter((item) => item.status === "done").length}`,
     ].join("\n")
   );
