@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuck PNG Interlacing</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="screen-noise" aria-hidden="true"></div>
+    <main class="shell">
+      <section class="panel hero">
+        <p class="eyebrow">FUCK PNG INTERLACING</p>
+        <h1>L'entrelassement PNG est une vieille merde.</h1>
+        <p class="lede">
+          Balance tes PNG contaminés par cet algorithme foireux, et récupère un ZIP de fichiers
+          propres, plats, normaux, enfin débarrassés de cette saloperie.
+        </p>
+        <div class="hero-actions">
+          <button class="action primary" id="pick-button" type="button">Choisir des PNG</button>
+          <button class="action" id="convert-button" type="button" disabled>Nettoyer tout</button>
+          <button class="action danger" id="download-button" type="button" disabled>
+            Télécharger le ZIP
+          </button>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <section class="panel">
+          <div
+            class="dropzone"
+            id="dropzone"
+            role="button"
+            tabindex="0"
+            aria-controls="file-input"
+            aria-label="Déposer des PNG"
+          >
+            <p class="dropzone-title">Dépose les fichiers ici</p>
+            <p class="dropzone-copy">
+              Ou clique pour sélectionner plusieurs PNG à la fois. Adam7 peut aller se faire cuire.
+            </p>
+            <p class="dropzone-meta">PNG uniquement. Import multiple. Conversion locale dans le navigateur.</p>
+          </div>
+          <input id="file-input" type="file" accept="image/png,.png" multiple hidden />
+
+          <div class="stats" aria-live="polite">
+            <article class="stat">
+              <span class="stat-label">chargés</span>
+              <strong class="stat-value" id="count-total">0</strong>
+            </article>
+            <article class="stat">
+              <span class="stat-label">entrelassés</span>
+              <strong class="stat-value toxic" id="count-interlaced">0</strong>
+            </article>
+            <article class="stat">
+              <span class="stat-label">convertis</span>
+              <strong class="stat-value clean" id="count-converted">0</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel queue-panel">
+          <div class="panel-heading">
+            <h2>Journal de nettoyage</h2>
+            <p id="status-line">Aucune horreur entrelacée chargée pour le moment.</p>
+          </div>
+          <ul class="file-list" id="file-list"></ul>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
